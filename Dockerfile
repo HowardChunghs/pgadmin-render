@@ -1,6 +1,6 @@
 FROM dpage/pgadmin4:9.18
 USER root
-RUN setcap -r "$(realpath "$(which python3)")"
+RUN setcap -r "$(realpath "$(which python3)")" || true
 ENV PGADMIN_LISTN_ADDRESS=0.0.0.0
 ENV PGADMIN_DISABLE_POSTFIX=true
 ENV PGADMIN_CONFIG_UPGRADE_CHECK_ENABLED=False
